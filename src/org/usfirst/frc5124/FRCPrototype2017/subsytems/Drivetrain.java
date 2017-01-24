@@ -9,10 +9,11 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5124.JakeBoticsSwag.subsystems;
+package org.usfirst.frc5124.FRCPrototype2017.subsytems;
 
-import org.usfirst.frc5124.JakeBoticsSwag.RobotMap;
-import org.usfirst.frc5124.JakeBoticsSwag.commands.*;
+import org.usfirst.frc5124.FRCPrototype2017.RobotMap;
+import org.usfirst.frc5124.FRCPrototype2017.commands.JoystickPuppetry;
+import org.usfirst.frc5124.FRCPrototype2017.commands.*;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;

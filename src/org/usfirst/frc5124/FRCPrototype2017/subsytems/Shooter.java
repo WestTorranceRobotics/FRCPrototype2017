@@ -1,7 +1,7 @@
-package org.usfirst.frc5124.JakeBoticsSwag.subsystems;
+package org.usfirst.frc5124.FRCPrototype2017.subsytems;
 
-import org.usfirst.frc5124.JakeBoticsSwag.Robot;
-import org.usfirst.frc5124.JakeBoticsSwag.RobotMap;
+import org.usfirst.frc5124.FRCPrototype2017.Robot;
+import org.usfirst.frc5124.FRCPrototype2017.RobotMap;
 
 import com.ctre.CANTalon;
 

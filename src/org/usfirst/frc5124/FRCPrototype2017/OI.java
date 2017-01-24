@@ -9,9 +9,9 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5124.JakeBoticsSwag;
+package org.usfirst.frc5124.FRCPrototype2017;
 
-import org.usfirst.frc5124.JakeBoticsSwag.commands.*;
+import org.usfirst.frc5124.FRCPrototype2017.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;

@@ -9,10 +9,11 @@
 // it from being updated in the future.
 
 
-package org.usfirst.frc5124.JakeBoticsSwag.commands;
+package org.usfirst.frc5124.FRCPrototype2017.commands;
+import org.usfirst.frc5124.FRCPrototype2017.Robot;
+import org.usfirst.frc5124.FRCPrototype2017.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc5124.JakeBoticsSwag.Robot;
-import org.usfirst.frc5124.JakeBoticsSwag.RobotMap;
 
 /**
  *

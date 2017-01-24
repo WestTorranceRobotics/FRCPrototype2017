@@ -1,4 +1,4 @@
-package org.usfirst.frc5124.JakeBoticsSwag;
+package org.usfirst.frc5124.FRCPrototype2017;
 
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -13,8 +13,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import java.io.IOException;
 
-import org.usfirst.frc5124.JakeBoticsSwag.commands.*;
-import org.usfirst.frc5124.JakeBoticsSwag.subsystems.*;
+import org.usfirst.frc5124.FRCPrototype2017.subsytems.Drivetrain;
+import org.usfirst.frc5124.FRCPrototype2017.subsytems.FileMakr;
+import org.usfirst.frc5124.FRCPrototype2017.subsytems.Shooter;
+import org.usfirst.frc5124.FRCPrototype2017.commands.*;
 
 public class Robot extends IterativeRobot  {
 
