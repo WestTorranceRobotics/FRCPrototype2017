@@ -22,6 +22,14 @@ public class RobotMap {
     public static CANTalon shooter;
 
     public static void init() {
+    	
+    	shooter = new CANTalon(2);//shooter cantalon has can id of 2
+        shooter.enableBrakeMode(false);
+        
+        leftTestMotor = new VictorSP(4);//generic test motor, obsolete
+        leftTestMotor.setInverted(true);
+        
+        LiveWindow.addActuator("test", "leftTest", (VictorSP)leftTestMotor);
         
         drivetrainLeft1 = new Talon(0);
         LiveWindow.addActuator("Drivetrain", "Left 1", (Talon) drivetrainLeft1);
@@ -35,11 +43,6 @@ public class RobotMap {
         drivetrainRight2 = new Talon(3);
         LiveWindow.addActuator("Drivetrain", "Right 2", (Talon) drivetrainRight2);
         
-        leftTestMotor = new VictorSP(4);
-        leftTestMotor.setInverted(true);
-        
-        LiveWindow.addActuator("test", "leftTest", (VictorSP)leftTestMotor);
-        
         drivetrainRobotDrive = new RobotDrive(drivetrainLeft1, drivetrainLeft2,
               drivetrainRight1, drivetrainRight2);
       
@@ -51,11 +54,10 @@ public class RobotMap {
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        
         compressorCompressor = new Compressor(0);
         
         gearSolenoid = new Solenoid(0, 0);
-        
-        shooter = new CANTalon(2);
-        shooter.enableBrakeMode(false);
+       
     }
 }
