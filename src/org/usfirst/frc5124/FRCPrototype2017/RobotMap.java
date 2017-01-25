@@ -16,20 +16,27 @@ public class RobotMap {
     public static SpeedController drivetrainRight1;
     public static SpeedController drivetrainRight2;
     public static RobotDrive drivetrainRobotDrive;
-    public static SpeedController leftTestMotor;
-    public static Compressor compressorCompressor;
-    public static Solenoid gearSolenoid;
-    public static CANTalon shooter;
+    public static Compressor compressor;
+    public static Solenoid gearHolderGearSolenoid;
+    public static CANTalon shooterShooterMotor;
+    public static VictorSP intakeIntakeMotor;
+    public static VictorSP conveyorConveyorMotor;
 
     public static void init() {
     	
-    	shooter = new CANTalon(2);//shooter cantalon has can id of 2
-        shooter.enableBrakeMode(false);
-        
-        leftTestMotor = new VictorSP(4);//generic test motor, obsolete
-        leftTestMotor.setInverted(true);
-        
-        LiveWindow.addActuator("test", "leftTest", (VictorSP)leftTestMotor);
+    	compressor = new Compressor(0);
+    	
+    	gearHolderGearSolenoid = new Solenoid(0, 0);
+    	LiveWindow.addActuator("Gear Holder", "Gear Solenoid", gearHolderGearSolenoid);
+    	
+    	intakeIntakeMotor = new VictorSP(4);
+    	LiveWindow.addActuator("Intake", "Intake Motor", intakeIntakeMotor);
+    	
+    	conveyorConveyorMotor = new VictorSP(5); 
+    	LiveWindow.addActuator("Conveyor", "Conveyor Motor", conveyorConveyorMotor);
+    	
+    	shooterShooterMotor = new CANTalon(2);//shooter cantalon has can id of 2
+    	shooterShooterMotor.enableBrakeMode(false);
         
         drivetrainLeft1 = new Talon(0);
         LiveWindow.addActuator("Drivetrain", "Left 1", (Talon) drivetrainLeft1);
@@ -54,10 +61,6 @@ public class RobotMap {
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         drivetrainRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        
-        compressorCompressor = new Compressor(0);
-        
-        gearSolenoid = new Solenoid(0, 0);
        
     }
 }

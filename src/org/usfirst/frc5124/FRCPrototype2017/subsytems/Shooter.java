@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 public class Shooter extends PIDSubsystem {
 
-    CANTalon shooterMotor = RobotMap.shooter;
+    CANTalon shooterMotor = RobotMap.shooterShooterMotor;
     
     public static final int shootingSpeed = 17700;
     

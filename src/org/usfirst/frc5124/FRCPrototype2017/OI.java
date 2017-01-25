@@ -3,6 +3,7 @@ package org.usfirst.frc5124.FRCPrototype2017;
 import org.usfirst.frc5124.FRCPrototype2017.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class OI {
@@ -12,10 +13,30 @@ public class OI {
 
     public OI() {
 
+    	//joysticks
     	driver = new Joystick(0);
         operator = new Joystick(1);
         
-        //SmartDashboard buttons here
+        //joystick button initializations (need to be renamed at a later date)
+        JoystickButton intakeButton = new JoystickButton(driver, 2);
+        JoystickButton exhaustButton = new JoystickButton(driver, 3);
+        JoystickButton conveyUpButton = new JoystickButton(operator, 2);
+        JoystickButton conveyDownButton = new JoystickButton(operator, 3);
+        JoystickButton shootButton = new JoystickButton(operator, 1);
+        JoystickButton gearOpenButton = new JoystickButton(operator, 4);
+        JoystickButton gearCloseButton = new JoystickButton(operator, 5);
+        
+        //setting commands to buttons
+        intakeButton.whileHeld(new IntakeIntakeBalls());
+        exhaustButton.whileHeld(new IntakeExhaustBalls());
+        conveyUpButton.whileHeld(new ConveyorConveyBallsUp());
+        conveyDownButton.whileHeld(new ConveyorConveyBallsDown());
+        shootButton.whileHeld(new ShooterShootingSpeed());
+        gearOpenButton.whenPressed(new GearHolderOpen());
+        gearCloseButton.whenPressed(new GearHolderClose());
+        
+        //SmartDashboard buttons for testing commands (prototype only)
+        
     }
 
     public Joystick getDriver() {
