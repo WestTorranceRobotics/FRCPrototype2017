@@ -32,10 +32,6 @@ public class Shooter extends PIDSubsystem {
     	return shooterMotor.getOutputVoltage();
     }
     
-    public double getTime() {
-    	return Robot.autoTimer.get();
-    }
-    
     public void setShooterSpeed(double power) {
     	shooterMotor.set(power);
     }
