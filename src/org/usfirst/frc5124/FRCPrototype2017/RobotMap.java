@@ -21,10 +21,14 @@ public class RobotMap {
     public static CANTalon shooterShooterMotor;
     public static VictorSP intakeIntakeMotor;
     public static VictorSP conveyorConveyorMotor;
+    public static VictorSP rightTest;
 
     public static void init() {
     	
     	compressor = new Compressor(0);
+    	
+    	rightTest = new VictorSP(5);
+    	LiveWindow.addActuator("test right", "test", rightTest);
     	
     	gearHolderGearSolenoid = new Solenoid(0, 0);
     	LiveWindow.addActuator("Gear Holder", "Gear Solenoid", gearHolderGearSolenoid);
