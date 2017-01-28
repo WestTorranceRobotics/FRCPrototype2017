@@ -17,11 +17,13 @@ public class Shooter extends PIDSubsystem {
     
     
     public Shooter() {
-    	super("Shooter", 0.000003, 0.000002, 0);//revs up good, needs to be more responsive to balls
+    	super("Shooter", 0.00001, 0.0000001, 0);//revs up good, needs to be more responsive to balls
     	//super("Shooter", .00003, 0.0000055, 0); //old values, obsolete, kept for paranoia value
     	setAbsoluteTolerance(50);
+    	getPIDController().setOutputRange(0, .8);
         getPIDController().setContinuous(false);
         LiveWindow.addActuator("Shooter", "PIDSubsystem Controller", getPIDController());
+        
     }
     
     public double getCurrent() {

@@ -34,6 +34,8 @@ public class Robot extends IterativeRobot  {
         compressor = new Compressor();
         shooter = new Shooter();
         
+        autonomousCommand = new ShooterShootingSpeed();
+        
         oi = new OI();
     }
 
@@ -49,16 +51,10 @@ public class Robot extends IterativeRobot  {
 
     public void autonomousInit() {
         if (autonomousCommand != null) autonomousCommand.start();
-        shooter.enable();
-        shooter.setSetpoint(shooter.getShootingSpeed());
+        
     }
 
     public void autonomousPeriodic() {
-    	SmartDashboard.putNumber("pr", RobotMap.shooterShooterMotor.get());
-    	SmartDashboard.putNumber("Velocity", shooter.getEncoderVelocity());
-        SmartDashboard.putNumber("Voltage", shooter.getVoltage());
-        SmartDashboard.putNumber("Current", shooter.getCurrent());
-        
         Scheduler.getInstance().run();
     }
 

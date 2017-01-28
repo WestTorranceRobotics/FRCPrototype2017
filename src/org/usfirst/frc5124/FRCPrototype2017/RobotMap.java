@@ -1,6 +1,7 @@
 package org.usfirst.frc5124.FRCPrototype2017;
 
 import com.ctre.CANTalon;
+import com.ctre.CANTalon.FeedbackDevice;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -25,7 +26,7 @@ public class RobotMap {
 
     public static void init() {
     	
-    	compressor = new Compressor(0);
+    	//compressor = new Compressor(0);
     	
     	rightTest = new VictorSP(5);
     	LiveWindow.addActuator("test right", "test", rightTest);
@@ -36,11 +37,14 @@ public class RobotMap {
     	intakeIntakeMotor = new VictorSP(4);
     	LiveWindow.addActuator("Intake", "Intake Motor", intakeIntakeMotor);
     	
-    	conveyorConveyorMotor = new VictorSP(5); 
-    	LiveWindow.addActuator("Conveyor", "Conveyor Motor", conveyorConveyorMotor);
+    	//conveyorConveyorMotor = new VictorSP(5); 
+    	//LiveWindow.addActuator("Conveyor", "Conveyor Motor", conveyorConveyorMotor);
     	
     	shooterShooterMotor = new CANTalon(2);//shooter cantalon has can id of 2
     	shooterShooterMotor.enableBrakeMode(false);
+    	shooterShooterMotor.setPID(0.00001, 0.0000001, 0);
+        shooterShooterMotor.setControlMode(3);
+        shooterShooterMotor.setFeedbackDevice(FeedbackDevice.QuadEncoder);
         
         drivetrainLeft1 = new Talon(0);
         LiveWindow.addActuator("Drivetrain", "Left 1", (Talon) drivetrainLeft1);
