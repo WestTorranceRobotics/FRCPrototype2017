@@ -42,8 +42,12 @@ public class RobotMap {
     	
     	shooterShooterMotor = new CANTalon(2);//shooter cantalon has can id of 2
     	shooterShooterMotor.enableBrakeMode(false);
-    	shooterShooterMotor.setPID(0.00001, 0.0000001, 0);
-        shooterShooterMotor.setControlMode(3);
+    	shooterShooterMotor.setProfile(0);
+    	shooterShooterMotor.setP(0.00001);
+    	shooterShooterMotor.setI(0.00007);
+    	shooterShooterMotor.setD(0);
+    	shooterShooterMotor.setF(0);
+        shooterShooterMotor.setControlMode(2);
         shooterShooterMotor.setFeedbackDevice(FeedbackDevice.QuadEncoder);
         
         drivetrainLeft1 = new Talon(0);

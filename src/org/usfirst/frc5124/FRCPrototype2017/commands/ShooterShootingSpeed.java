@@ -19,9 +19,10 @@ public class ShooterShootingSpeed extends Command {
     protected void initialize() {
     	//Robot.shooter.setSetpoint(Robot.shooter.getShootingSpeed());
     	//Robot.shooter.enable();
-    	RobotMap.shooterShooterMotor.setSetpoint(Robot.shooter.getShootingSpeed());
-    	RobotMap.shooterShooterMotor.clearIAccum();
-    	RobotMap.shooterShooterMotor.enable();
+    	RobotMap.shooterShooterMotor.setControlMode(2);
+    	RobotMap.shooterShooterMotor.set(Robot.shooter.getShootingSpeed());
+    	//RobotMap.shooterShooterMotor.clearIAccum();
+    	RobotMap.shooterShooterMotor.enableControl();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -43,8 +44,9 @@ public class ShooterShootingSpeed extends Command {
     protected void end() {
     	//Robot.shooter.disable();
     	//Robot.shooter.setSetpoint(0);
-    	RobotMap.shooterShooterMotor.disable();
-    	RobotMap.shooterShooterMotor.setSetpoint(0);
+    	RobotMap.shooterShooterMotor.enableBrakeMode(false);
+    	RobotMap.shooterShooterMotor.setControlMode(0);
+    	RobotMap.shooterShooterMotor.set(0);
     }
 
     // Called when another command which requires one or more of the same
