@@ -20,6 +20,7 @@ public class ShooterShootingSpeed extends Command {
     	//Robot.shooter.setSetpoint(Robot.shooter.getShootingSpeed());
     	//Robot.shooter.enable();
     	RobotMap.shooterShooterMotor.setControlMode(2);
+    	//RobotMap.shooterShooterMotor.setVoltageRampRate(Robot.shooter.getRampRate());
     	RobotMap.shooterShooterMotor.set(Robot.shooter.getShootingSpeed());
     	//RobotMap.shooterShooterMotor.clearIAccum();
     	RobotMap.shooterShooterMotor.enableControl();

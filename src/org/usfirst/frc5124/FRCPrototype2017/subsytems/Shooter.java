@@ -13,7 +13,8 @@ public class Shooter extends PIDSubsystem {
 
     CANTalon shooterMotor = RobotMap.shooterShooterMotor;
     
-    public static final int shootingSpeed = 17700;
+    public static final int shootingSpeed = 17000;
+    public static final double ramprate = 8;
     
     
     public Shooter() {
@@ -28,6 +29,10 @@ public class Shooter extends PIDSubsystem {
     
     public double getCurrent() {
     	return shooterMotor.getOutputCurrent();
+    }
+    
+    public double getRampRate() {
+    	return ramprate;
     }
     
     public double getVoltage() {
