@@ -40,7 +40,6 @@ public class Robot extends IterativeRobot  {
     }
 
     public void disabledInit(){
-    	shooter.disable();
     }
 
     public void disabledPeriodic() {
