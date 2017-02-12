@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.command.Command;
 public class GearHolderClose extends Command {
 
     public GearHolderClose() {
-        requires(Robot.gearholder);
+        requires(Robot.gearHolder);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.gearholder.close();
+    	Robot.gearHolder.close();
     }
 
     // Called repeatedly when this Command is scheduled to run

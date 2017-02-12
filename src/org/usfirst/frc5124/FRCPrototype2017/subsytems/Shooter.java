@@ -12,8 +12,10 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Shooter extends PIDSubsystem {
 
     CANTalon shooterMotor = RobotMap.shooterShooterMotor;
+    CANTalon shooterMotor2 = RobotMap.shooterShooterMotor2;
+    CANTalon shooterMotor3 = RobotMap.shooterShooterMotor3;
     
-    public static final int shootingSpeed = 17000;
+    public static final int shootingSpeed = 10000;
     public static final double ramprate = 8;
     
     
@@ -41,10 +43,14 @@ public class Shooter extends PIDSubsystem {
     
     public void setShooterSpeed(double power) {
     	shooterMotor.set(power);
+    	shooterMotor2.set(power);
+    	shooterMotor3.set(power);
     }
     
     public void stop() {
     	shooterMotor.set(0);
+    	shooterMotor3.set(0);
+    	shooterMotor2.set(0);
     }
     
     public int getShootingSpeed() {

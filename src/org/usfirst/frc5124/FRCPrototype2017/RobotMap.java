@@ -20,6 +20,8 @@ public class RobotMap {
     public static Compressor compressor;
     public static Solenoid gearHolderGearSolenoid;
     public static CANTalon shooterShooterMotor;
+    public static CANTalon shooterShooterMotor2;
+    public static CANTalon shooterShooterMotor3;
     public static VictorSP intakeIntakeMotor;
     public static VictorSP conveyorConveyorMotor;
     public static VictorSP rightTest;
@@ -42,13 +44,20 @@ public class RobotMap {
     	
     	shooterShooterMotor = new CANTalon(2);//shooter cantalon has can id of 2
     	shooterShooterMotor.enableBrakeMode(false);
+    	
+    	shooterShooterMotor = new CANTalon(3);//shooter cantalon has can id of 2
+    	shooterShooterMotor.enableBrakeMode(false);
+    	
+    	shooterShooterMotor = new CANTalon(4);//shooter cantalon has can id of 2
+    	shooterShooterMotor.enableBrakeMode(false);
+    	
     	shooterShooterMotor.setProfile(0);
     	shooterShooterMotor.setP(.1/*.000005*/);
     	shooterShooterMotor.setI(0/*.00007*/);
     	shooterShooterMotor.setD(0);
     	shooterShooterMotor.setF(0.037);
     	shooterShooterMotor.setAllowableClosedLoopErr(50);
-        shooterShooterMotor.setControlMode(2);
+        shooterShooterMotor.setControlMode(0);
         shooterShooterMotor.setFeedbackDevice(FeedbackDevice.QuadEncoder);
         
         drivetrainLeft1 = new Talon(0);

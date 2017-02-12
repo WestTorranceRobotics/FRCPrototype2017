@@ -20,7 +20,7 @@ public class Robot extends IterativeRobot  {
     public static OI oi;
     public static Intake intake;
     public static Conveyor conveyor;
-    public static GearHolder gearholder;
+    public static GearHolder gearHolder;
     public static Drivetrain drivetrain;
     public static Compressor compressor;
     public static Shooter shooter;
@@ -29,7 +29,7 @@ public class Robot extends IterativeRobot  {
     	RobotMap.init();
     	intake = new Intake();
     	conveyor = new Conveyor();
-    	gearholder = new GearHolder();
+    	gearHolder = new GearHolder();
         drivetrain = new Drivetrain();
         compressor = new Compressor();
         shooter = new Shooter();
@@ -67,9 +67,7 @@ public class Robot extends IterativeRobot  {
         
         SmartDashboard.putNumber("Velocity", shooter.getEncoderVelocity());
         SmartDashboard.putNumber("Position", shooter.getEncoderPosition());
-        
-        /*
-         * Keeping this just in case
+       
          
         double power = Math.abs((oi.getOperator().getRawAxis(3) - 1)/-2);
         if (power > .1) {
@@ -80,7 +78,7 @@ public class Robot extends IterativeRobot  {
         	shooter.stop();
         	SmartDashboard.putNumber("pr", power);
         }
-        */
+        
     }
 
     public void testPeriodic() {

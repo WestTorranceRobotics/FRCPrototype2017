@@ -1,7 +1,7 @@
 package org.usfirst.frc5124.FRCPrototype2017;
 
 import org.usfirst.frc5124.FRCPrototype2017.commands.*;
-
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -61,5 +61,15 @@ public class OI {
        	} else {
        		return 0;
         }	
+    }
+    
+    public void vibrateDriver() {
+    	driver.setRumble(GenericHID.RumbleType.kLeftRumble, 0.5);
+   		driver.setRumble(GenericHID.RumbleType.kRightRumble, 1);
+    }
+    	     
+    public void stopVibrate() {
+    	driver.setRumble(GenericHID.RumbleType.kLeftRumble, 0);
+    	driver.setRumble(GenericHID.RumbleType.kRightRumble, 0);
     }
 }

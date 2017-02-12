@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.command.Command;
 public class GearHolderOpen extends Command {
 
     public GearHolderOpen() {
-        requires(Robot.gearholder);
+        requires(Robot.gearHolder);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.gearholder.open();
+    	Robot.gearHolder.open();
     }
 
     // Called repeatedly when this Command is scheduled to run
